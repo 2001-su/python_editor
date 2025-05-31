@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Python Monaco Editor</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #1e1e1e;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        #editor {
+            width: 100%;
+            max-width: 900px;
+            height: 60vh;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 122, 204, 0.7);
+            overflow: hidden;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin: 15px 0 0 0;
+            background-color: #007acc;
+            color: white;
+            border: none;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgb(0 122 204 / 0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #005a9e;
+            transform: scale(1.05);
+        }
+
+        #output {
+            background: #252526;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-top: 15px;
+            white-space: pre-wrap;
+            font-family: 'Fira Mono', monospace;
+            font-size: 16px;
+            color: #dcdcdc;
+            min-height: 120px;
+            width: 100%;
+            max-width: 900px;
+            box-shadow: inset 0 0 15px #000000;
+            position: relative;
+        }
+
+        /* Loading animation dots */
+        .loading-dots {
+            display: inline-block;
+            font-weight: bold;
+            color: #007acc;
+        }
+    </style>
+    <script src="https://unpkg.com/monaco-editor@0.38.0/min/vs/loader.js"></script>
+</head>
+
+<body>
+    <h1>Online Python Editor (Monaco)</h1>
+
+    <div id="editor"></div>
+
+    <button onclick="runCode()" id="run-btn">▶ Run</button>
+
+    <pre id="output">Output will appear here...</pre>
+
+    <script src="/static/editor.js"></script>
+</body>
+
+</html>
